@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta</title>
+    <link rel="stylesheet" href="style_cartinha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Tenho uma perguntinha…</h1>
+
+    <div class="carta">
+        <p>Você quer ser meu namorado?</p>
+    </div>
+
+    <div class="botoes">
+        <button onclick="clicou()">Sim</button>
+        <button id="nao" onmouseover="teste()">Não</button>
+    </div>
+
+    <script>
+        function clicou() {
+
+            for (let i = 0; i < 10; i++) { //cria um loop que se repete 10 vezes, permitindo a criação de múltiplos corações na tela
+                            
+            const coracao = document.createElement("div"); //seleciona o elemento "coracao" e cria um novo elemento "div" para representar o coração
+
+            coracao.innerHTML = "💖"; // coloca o 💖 dentro
+
+            coracao.classList.add("coracao"); //adiciona a classe "coracao" ao elemento "coracao", permitindo que ele herde os estilos definidos para essa classe no CSS  
+           
+            coracao.style.left = Math.random() * 500 + "px"; //definir a posição horizontal do coração usando uma coordenada X aleatória, o "px" é adicionado para indicar que a posição é em pixels
+            coracao.style.top = Math.random() * 500 + "px"; //definir a posição vertical do coração usando uma coordenada Y aleatória
+            
+            document.body.appendChild(coracao); //adiciona o elemento "coracao" como um filho do elemento "body", fazendo com que ele seja exibido na página
+
+            setTimeout(() => {
+                coracao.remove(); //remove o elemento "coracao" da página após um determinado tempo, criando um efeito de desaparecimento do coração
+            }, 1000); //o tempo é definido para 1000 milissegundos (1 segundo)
+        }
+}
+        
+        function teste() {
+            const botao = document.getElementById("nao"); //permite acessar um elemento HTML específico usando seu atributo "id", manipulando suas propriedades, estilos ou conteúdo.
+            const x = Math.random() * 500; //gerar coordenada X aleatória
+            const y = Math.random() * 500; //gerar coordenada Y aleatória
+            botao.style.left = x + "px"; //definir a posição horizontal do botão usando a coordenada X, o "px" é adicionado para indicar que a posição é em pixels
+            botao.style.top = y + "px"; //definir a posição vertical do botão usando a coordenada Y
+
+        }
+
+    </script>
+
+</body>
+</html>
