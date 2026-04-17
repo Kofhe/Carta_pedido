@@ -1,0 +1,155 @@
+/* Centralizar o texto */
+body {
+    text-align: center;
+    background: linear-gradient(to bottom, pink, rgb(173, 216, 230));
+    /*deixar o fundo com um degradê de rosa para azul */
+
+    font-family: 'Press Start 2P', cursive;
+    /*usar a fonte "Press Start 2P" para dar um estilo retrô */
+
+    display: flex;
+    /*usar flexbox para centralizar o conteúdo */
+    flex-direction: column;
+    /*organizar os itens em coluna */
+    justify-content: center;
+    /*centralizar horizontalmente */
+    align-items: center;
+    /*centralizar verticalmente */
+    height: 100vh;
+    /*definir a altura da tela para 100% da altura da viewport */
+}
+
+/*arrumando o titulo */
+h1 {
+    color: white;
+    /*cor do título */
+    margin-bottom: 20px;
+    /*espaço abaixo do título */
+    text-shadow: 0 0 8px rgba(255, 105, 135, 0.8);
+    /*adicionar um brilho ao título */
+}
+
+.carta {
+    /*Centralizando e criando a caixa*/
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    margin: 20px auto;
+    /* centraliza uma caixa */
+    font-size: 14px;
+    /*arrumando texto da caixa */
+}
+
+.carta {
+    /*Deixar bonitinho */
+    border: 4px solid #ff8fa3;
+    /*mexendo na borda da caixinha */
+    border-radius: 20px;
+    /*arredonda os cantos da caixinha */
+
+    padding: 20px;
+    /*deixar um espaço entre o texto e a borda da caixa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /*adicionar uma sombra para dar profundidade */
+
+    display: flex;
+    /*usar flexbox para centralizar o conteúdo dentro da caixa */
+    justify-content: center;
+    /*centralizar horizontalmente */
+    align-items: center;
+    /*centralizar verticalmente */
+    text-align: center;
+    /*centralizar o texto dentro da caixa */
+
+    animation: brilho 2s infinite;
+    /*aplicar a animação de brilho por 2 segundos, repetindo infinitamente */
+}
+
+@keyframes brilho {
+
+    /*criar animação para a caixa */
+    0% {
+        box-shadow: 0 0 10px rgba(255, 105, 135, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 105, 135, 0.7);
+    }
+}
+
+
+#nao {
+    position: absolute;
+    /*colocar esse botão em qualquer lugar da tela */
+    transition: 0.3s;
+    /*deixar o movimento mais suave */
+}
+
+.coracao {
+    position: absolute;
+    /*colocar esse botão em qualquer lugar da tela */
+    font-size: 30px;
+    /*deixar o coração grandão */
+    animation: subir 1s linear;
+    /*aplicar a animação de subir por 1 segundos */
+}
+
+/*criar animação para o coração */
+@keyframes subir {
+
+    /*definir o movimento do coração */
+    0% {
+        transform: translateY(0);
+        /*começo da animação */
+        opacity: 1;
+        /*começa totalmente visível */
+    }
+
+    100% {
+        transform: translateY(-100px);
+        /*final da animação */
+        opacity: 0;
+        /*torna invisível */
+    }
+
+}
+
+/*deixar os botões bonitinhos */
+button {
+    padding: 10px 20px;
+    /*deixar o botão grandão */
+    border-radius: 20px;
+    /*arredonda os cantos do botão */
+    border: none;
+    /*remover a borda do botão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /*adicionar uma sombra para dar profundidade */
+    transition: 0.3s;
+    /*deixar o movimento mais suave */
+}
+
+button:hover {
+    transform: scale(1.1);
+    /*aumentar o tamanho do botão ao passar o mouse */
+    box-shadow: 0 0 12px rgba(255, 105, 135, 0.8);
+    /*adicionar um brilho ao passar o mouse */
+}
+
+button:active {
+    transform: scale(0.95);
+    /*afunda um pouco quando clicar*/
+}
+
+button:first-child {
+    background-color: #ff6b81;
+    ;
+    /*cor do botão "Sim" */
+    color: white;
+    /*cor do texto do botão "Sim" */
+}
+
+#nao {
+    /*deixar o não bonitinho */
+    background-color: rgb(1, 68, 90);
+    color: white;
+}
